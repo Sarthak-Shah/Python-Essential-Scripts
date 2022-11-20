@@ -37,21 +37,18 @@ and what about comparisons ? N*(N-1)/2 . (same as bubble sort ? )
 
 
 def selection_sort(array:list):
-    pointer = 0
     length = len(array)
-    if length > 1:
-        for i in range(length):
-            pointer_at_smallest_value = pointer
-            for j in range(pointer+1, length):
-                if array[pointer_at_smallest_value] > array[j]:
-                    pointer_at_smallest_value = j
-            print("for this iteration pointer and smallest_value_index was ", pointer, pointer_at_smallest_value)
-            array[pointer], array[pointer_at_smallest_value] = array[pointer_at_smallest_value], array[pointer]
-            pointer = pointer + 1
+    for i in range(length):
+        pointer_at_smallest_value = i
+        for j in range(i, length):
+            if array[pointer_at_smallest_value] > array[j]:
+                pointer_at_smallest_value = j
+        print("for this iteration pointer and smallest_value_index was ", i, pointer_at_smallest_value)
+        array[i], array[pointer_at_smallest_value] = array[pointer_at_smallest_value], array[i]
     return array
 
 
-# sample_array = [34, 12, 1, 56, 8, 78, 2, 8, 890]
-sample_array = [12, 6]
+sample_array = [34, 12, 1, 56, 8, 78, 2, 8, 890]
+# sample_array = [6]
 sorted_array = selection_sort(sample_array)
 print(sorted_array)
