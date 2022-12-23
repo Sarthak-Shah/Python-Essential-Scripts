@@ -5,7 +5,7 @@ Due to tunneling view of computer systems + comparison operator handles 2 values
 sorting algorithm accordingly. Like humans, computer can't process multiple attributes at same time, like you can
 easily find the shortest persons from 1 row in 1 look.
 """
-
+import time
 # Bubble sort
 """
 Like name, heavy elements will bubbled up after each iteration.
@@ -22,9 +22,12 @@ def bubble_sort(array):
     return array
 
 
-# sample_array = [1, 34, 456, 2, 4545, 7]
-# sorted_array = bubble_sort(sample_array)
-# print(sorted_array)
+sample_array = [3, 234, 42, 55, 2]*500
+start = time.time()
+sorted_array = bubble_sort(sample_array)
+end = time.time()
+print(f"Bubble Sort took : {end-start} for {sorted_array}")
+
 
 # Selection sort
 """
@@ -43,12 +46,53 @@ def selection_sort(array:list):
         for j in range(i, length):
             if array[pointer_at_smallest_value] > array[j]:
                 pointer_at_smallest_value = j
-        print("for this iteration pointer and smallest_value_index was ", i, pointer_at_smallest_value)
+        # print("for this iteration pointer and smallest_value_index was ", i, pointer_at_smallest_value)
         array[i], array[pointer_at_smallest_value] = array[pointer_at_smallest_value], array[i]
     return array
 
 
-sample_array = [34, 12, 1, 56, 8, 78, 2, 8, 890]
+sample_array = [3, 234, 42, 55, 2]*500
 # sample_array = [6]
+start = time.time()
 sorted_array = selection_sort(sample_array)
-print(sorted_array)
+end = time.time()
+print(f"Selection Sort took : {end-start} for {sorted_array}")
+
+
+"""
+insertion sort:
+from 1st element, we keep adding 1 element from RHS and sorting LHS after adding each element.
+It's still faster than selection and bubble sorting.
+time complexity:
+"""
+
+
+def insertion_sort(array:list):
+    sorted_array = []
+    for i in range(len(array)):
+        if i == 0:
+            sorted_array.append(array[i])
+        else:
+            new_insertion = array[i]
+            sorted_array.append(new_insertion)
+            for j in range(len(sorted_array)-1,1,-1):
+                if sorted_array[j] < sorted_array[j-1]:
+                    sorted_array[j], sorted_array[j-1] = sorted_array[j-1], sorted_array[j]
+    return sorted_array
+
+
+def optimized_insetion_sort(arr:list):
+    for i in range(1,len(arr)):
+        j = i
+        while arr[j-1] > arr[j] and j > 0:
+            arr[j-1], arr[j] = arr[j], arr[j-1]
+            j -= 1
+    return  arr
+
+
+start = time.time()
+sample_array = [3, 234, 42, 55, 2]*500
+# sorted_array = insertion_sort([1, 2, 4, 55, 3]*500)
+sorted_array = optimized_insetion_sort(sample_array)
+end = time.time()
+print(f"Insertion Sort took : {end-start} for {sorted_array}")
