@@ -1,3 +1,3 @@
 # Python-Essential-Scripts
 
-It coveres basic topics for tutoring.
+It covers basic core programming topics for tutoring.
