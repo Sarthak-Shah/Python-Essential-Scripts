@@ -1,6 +1,6 @@
 import math
 """
-One of the Core powerful concept of any programming language.
+One of the Core powerful concepts of any programming language.
 Before Recursion, one should know 1) Iteration 2) Functions
 
 Mostly used with advanced data structures like, Trees, Graphs, DP (dynamic programming)
