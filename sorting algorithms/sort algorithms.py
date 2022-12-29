@@ -22,11 +22,11 @@ def bubble_sort(array):
     return array
 
 
-sample_array = [3, 234, 42, 55, 2]*500
-start = time.time()
-sorted_array = bubble_sort(sample_array)
-end = time.time()
-print(f"Bubble Sort took : {end-start} for {sorted_array}")
+# sample_array = [3, 234, 42, 55, 2]*500
+# start = time.time()
+# sorted_array = bubble_sort(sample_array)
+# end = time.time()
+# print(f"Bubble Sort took : {end-start} for {sorted_array}")
 
 
 # Selection sort
@@ -51,12 +51,12 @@ def selection_sort(array:list):
     return array
 
 
-sample_array = [3, 234, 42, 55, 2]*500
-# sample_array = [6]
-start = time.time()
-sorted_array = selection_sort(sample_array)
-end = time.time()
-print(f"Selection Sort took : {end-start} for {sorted_array}")
+# sample_array = [3, 234, 42, 55, 2]*500
+# # sample_array = [6]
+# start = time.time()
+# sorted_array = selection_sort(sample_array)
+# end = time.time()
+# print(f"Selection Sort took : {end-start} for {sorted_array}")
 
 
 """
@@ -90,9 +90,60 @@ def optimized_insetion_sort(arr:list):
     return  arr
 
 
-start = time.time()
-sample_array = [3, 234, 42, 55, 2]*500
-# sorted_array = insertion_sort([1, 2, 4, 55, 3]*500)
-sorted_array = optimized_insetion_sort(sample_array)
-end = time.time()
-print(f"Insertion Sort took : {end-start} for {sorted_array}")
+# start = time.time()
+# sample_array = [3, 234, 42, 55, 2]*500
+# # sorted_array = insertion_sort([1, 2, 4, 55, 3]*500)
+# sorted_array = optimized_insetion_sort(sample_array)
+# end = time.time()
+# print(f"Insertion Sort took : {end-start} for {sorted_array}")
+
+
+"""
+Radix sort: base (used) for sorting. non comparison algorithm.
+space and time complexity depends on max length of digit from array. 
+start from RSB or LSB iterate through it and allocate it into respective bucket(bin) ex. 0 to 9 for base 10.
+
+time complexity: Radix sort has a time complexity of O(n*m), where n is the size of the input list and m is the maximum 
+number of digits in the elements of the list.
+Therefore, it’s not necessarily that O(n*m) is always faster than O(n*log(n)). It depends on the comparison between m 
+and log(n).
+space complexity: Radix sort has a space complexity of O(n + b), where n is the size of the input list and b is the 
+base (radix) used for sorting. Because the algorithm requires additional space to store the list of buckets used to 
+sort the elements.
+"""
+
+
+def radix_sort(arr):
+    """
+    Radix sort starting from the least significant digit(LSD)
+    :param arr: The list needs to be sorted
+    :return: A sorted list
+    """
+    # Find the maximum number of digits in the list
+    max_digits = max([len(str(x)) for x in arr])
+
+    # Set the base (radix) to 10
+    base = 10
+
+    # Create a list of buckets to store the digits
+    buckets = [[] for _ in range(base)]
+
+    # Iterate through each digit, starting with the least significant
+    for i in range(0, max_digits):
+        # Iterate through the elements in the list
+        for x in arr:
+            # Extract the i-th digit from the element
+            # (starting from the rightest digit)
+            digit = (x // base ** i) % base
+            # Add the element to the bin for the i-th digit
+            buckets[digit].append(x)
+        # Combine the buckets back into the list, starting with the elements in the 0 queue
+        arr = [x for queue in buckets for x in queue]
+        # Clear the buckets for the next iteration
+        buckets = [[] for _ in range(base)]
+
+    return arr
+
+
+# Test the function
+print(radix_sort([38, 2, 100, 5, 276, 42]))
