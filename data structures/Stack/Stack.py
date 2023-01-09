@@ -53,7 +53,7 @@ class Node:
         self.next = next
 
 
-class Stack:
+class StackWithLinedList:
     def __init__(self):
         self.top = None
 
@@ -74,16 +74,17 @@ class Stack:
         return self.top is None
 
 
-stack = Stack()
-stack.push("avatar movie")
-stack.push("sarthak")
-stack.push("epic sports")
-print(stack.peek())  # prints 3
-print(stack.pop())   # prints 3
-print(stack.pop())   # prints 2
-print(stack.is_empty())  # prints False
-print(stack.pop())   # prints 1
-print(stack.is_empty())  # prints True
+if __name__ == "__main__":
+    stack = StackWithLinedList()
+    stack.push("avatar movie")
+    stack.push("sarthak")
+    stack.push("epic sports")
+    print(stack.peek())  # prints 3
+    print(stack.pop())   # prints 3
+    print(stack.pop())   # prints 2
+    print(stack.is_empty())  # prints False
+    print(stack.pop())   # prints 1
+    print(stack.is_empty())  # prints True
 
 
 """
