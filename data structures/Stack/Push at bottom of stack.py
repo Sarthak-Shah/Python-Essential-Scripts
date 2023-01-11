@@ -1,4 +1,4 @@
-from Stack import StackWithLinedList
+from stack_with_list_linkedList import StackWithLinedList
 
 """
 Recursion and stack are best friends.

@@ -1,4 +1,4 @@
-from Stack import Stack
+from stack_with_list_linkedList import Stack
 
 
 class StringReversalWithStack(Stack):

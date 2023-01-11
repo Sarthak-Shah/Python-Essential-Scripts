@@ -43,7 +43,7 @@ class Stack:
 # print(stack.is_empty())  # prints True
 
 """
-Stack by LinedList
+Stack by LinkedList
 """
 
 
@@ -53,7 +53,7 @@ class Node:
         self.next = next
 
 
-class StackWithLinedList:
+class StackWithLinkedList:
     def __init__(self):
         self.top = None
 
@@ -75,7 +75,7 @@ class StackWithLinedList:
 
 
 if __name__ == "__main__":
-    stack = StackWithLinedList()
+    stack = StackWithLinkedList()
     stack.push("avatar movie")
     stack.push("sarthak")
     stack.push("epic sports")

@@ -29,7 +29,6 @@ class LinkedList:
             self.head = newNode
         self.size += 1
 
-
     def addMiddle(self, idx: int, data):
         if self.size == 0:
             self.addFirst(data)
@@ -44,7 +43,6 @@ class LinkedList:
         newNode = CreateNode(data, previousNode.next)
         previousNode.next = newNode
         self.size += 1
-
 
     def print(self):
         """
