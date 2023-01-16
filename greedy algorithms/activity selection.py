@@ -70,5 +70,5 @@ greedyOnUnSorted()
 
 """
 tc for sorted would be O(n)
-tc for unsorted would be 
+tc for unsorted would be O(n*logn)
 """
