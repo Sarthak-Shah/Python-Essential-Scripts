@@ -7,6 +7,11 @@ But two, the process of pickling is all about preserving and extending the shelf
 
 The Pickle in Python is more or less the same idea; preserving Python objects for later use.
 
+In technical terms, the Python pickle is a Python module used to serialize (and deserialize) an object structure into (and from) a byte stream. 
+Essentially, serializing an object means transforming it into a format that can be stored, and then deserializing it later, recreating the original 
+object from the serialized format. 
+The byte stream contains all the information necessary to reconstruct the object in another Python script.
+
 Program:
 input --->>      process --->>>      output
 Ways of inputs:
