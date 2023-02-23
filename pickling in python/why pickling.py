@@ -1,6 +1,12 @@
 """
 Serialize Python Objects With Pickle
 
+When you think about pickles in the real world, a jar full of small cucumbers or some other vegetable immersed in a vinegary brine probably comes to mind. 
+And if you take a moment to ponder pickles a bit further, a few additional thoughts may come to mind — for one, pickles are delicious. 
+But two, the process of pickling is all about preserving and extending the shelf life of a food for later use.
+
+The Pickle in Python is more or less the same idea; preserving Python objects for later use.
+
 Program:
 input --->>      process --->>>      output
 Ways of inputs:
