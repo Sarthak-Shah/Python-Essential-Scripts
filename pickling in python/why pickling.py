@@ -1,4 +1,7 @@
 """
+__author__ : "sarthak shah"
+"""
+"""
 Serialize Python Objects With Pickle
 
 When you think about pickles in the real world, a jar full of small cucumbers or some other vegetable immersed in a vinegary brine probably comes to mind. 
