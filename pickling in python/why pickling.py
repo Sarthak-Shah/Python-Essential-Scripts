@@ -1,6 +1,17 @@
 """
 Serialize Python Objects With Pickle
 
+When you think about pickles in the real world, a jar full of small cucumbers or some other vegetable immersed in a vinegary brine probably comes to mind. 
+And if you take a moment to ponder pickles a bit further, a few additional thoughts may come to mind — for one, pickles are delicious. 
+But two, the process of pickling is all about preserving and extending the shelf life of a food for later use.
+
+The Pickle in Python is more or less the same idea; preserving Python objects for later use.
+
+In technical terms, the Python pickle is a Python module used to serialize (and deserialize) an object structure into (and from) a byte stream. 
+Essentially, serializing an object means transforming it into a format that can be stored, and then deserializing it later, recreating the original 
+object from the serialized format. 
+The byte stream contains all the information necessary to reconstruct the object in another Python script.
+
 Program:
 input --->>      process --->>>      output
 Ways of inputs:
