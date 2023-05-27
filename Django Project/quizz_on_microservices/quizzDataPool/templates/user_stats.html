@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizz Result</title>
+
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th, td {
+                text-align: left;
+                padding: 8px;
+                border: 1px solid #ddd;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+        </style>
+
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+        <h1>Your Stats</h1>
+            <p>Maximum Marks: {{ max_marks }}</p>
+            <p>Minimum Marks: {{ min_marks }}</p>
+            <p>Average Marks: {{ avg_marks }}</p>
+
+            {% if past_record %}
+                  <h3>Past Record:</h3>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Date/Time</th>
+                        <th>Marks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for timestamp, marks in past_record.items %}
+                        <tr>
+                          <td>{{ timestamp }}</td>
+                          <td>{{ marks }}</td>
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+        {% endif %}
+
+    {% endblock %}
+</body>
+</html>

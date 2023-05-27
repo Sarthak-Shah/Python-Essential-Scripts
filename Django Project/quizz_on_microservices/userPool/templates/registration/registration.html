@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to QuizzOoooMicro Registration</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+        <form method="post" style="padding:2rem;">
+            <table>
+            <h2 style="padding:2rem;">Register User</h2>
+          {{ form.as_table }}
+
+            </table>
+            <button type="submit" class="btn btn-success m-4 p-2">Register</button>
+        </form>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizz Result</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+<!--    <header>-->
+<!--        <a href="{% url 'logout' %}">Logout</a>-->
+<!--    </header>-->
+        <h2>Hey {{ played_user}}, you have scored: {{ total_marks }}</h2>
+        <br>
+            {% if total_marks < 2.1 %}
+                <p>Please Try Again ! </p>
+            {% endif %}
+            {% if total_marks == 3 %}
+                 <p>Good Job ! </p>
+            {% endif %}
+            {% if total_marks == 4 %}
+                 <p>Excellent Work ! </p>
+            {% endif %}
+            {% if total_marks == 5 %}
+                 <p>You are a genius ! </p>
+            {% endif %}
+            <br>
+            {% if total_marks < 2.5 %}
+                 <button onclick="location.href='{% url 'quizz' %}'">Retake Quizz</button>
+            {% endif %}
+            <br>
+            <p></p>
+            <button onclick="location.href='{% url 'stats' %}'">Show Stats</button>
+    {% endblock %}
+</body>
+</html>
