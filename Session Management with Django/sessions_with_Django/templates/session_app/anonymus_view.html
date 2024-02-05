@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anonymus View</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+      <h1 class="display-4 mb-4">Anonymus View</h1>
+      <p><b>Hello, Guest ! </b> You have been assigned with, </p>
+      <p><b>Session Key: </b> {{ session_key }}</p>
+      <p><b>Language Preference: </b>{{ language_preference }}</p>
+      <p><b>Session Start time: </b>{{ session_start_time }}</p>
+      <p><b>Session End time: </b>{{ session_end_time }}</p>
+      <br><br>
+      <a href="{% url 'index' %}" class="btn btn-primary">Go Back</a>
+  </div>
+
+{% bootstrap_javascript %}
+</body>
+</html>

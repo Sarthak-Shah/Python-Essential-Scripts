@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Logged In View</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+      <h1 class="display-4 mb-4">Logged In View</h1>
+      <p>Hello, {{ user.username }} ! You have been assigned with, </p>
+      <p><b>Session Key: </b>{{ session_key }}</p>
+      <p>You are authorized to access below data: </p>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Brand</th>
+              <th scope="col">Color</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Toyota</td>
+              <td>Red</td>
+            </tr>
+            <tr>
+              <td>Ford</td>
+              <td>Blue</td>
+            </tr>
+            <tr>
+              <td>BMW</td>
+              <td>Green</td>
+            </tr>
+            <tr>
+              <td>Audi</td>
+              <td>Black</td>
+            </tr>
+          </tbody>
+        </table><br><br>
+
+        <a href="{% url 'logout' %}" class="btn btn-primary">Log Out</a>
+  </div>
+
+{% bootstrap_javascript %}
+</body>
+</html>

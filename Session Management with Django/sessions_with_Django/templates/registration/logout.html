@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Logout</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+      <h1 class="display-4 mb-4">You have been logged out</h1>
+      <p><b>Session Key: </b>{{ session_key }}</p><br>
+      <a href="{% url 'login' %}" class="btn btn-primary">Log In Again</a>
+      <a href="{% url 'index' %}" class="btn btn-primary">Go Back</a>
+  </div>
+
+{% bootstrap_javascript %}
+</body>
+</html>

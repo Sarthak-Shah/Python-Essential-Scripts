@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+</head>
+  <body class="bg-light">
+    <h2>Login</h2>
+    <form method="post" class="p-5">
+    {% csrf_token %}
+      <div class="mb-3">
+        <label for="username" class="form-label">{{ form.username.label_tag }}</label>
+        {{ form.username }}
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">{{ form.password.label_tag }}</label>
+        {{ form.password }}
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </body>
+</html>
+{% bootstrap_javascript %}
