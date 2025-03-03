@@ -61,3 +61,47 @@ Thankfully, most graph problems will have the nodes labeled [0, n - 1], so we ca
 isConnected = [[1,1,0], [1,1,0], [0,0,1]]
 print(countProvinces(isConnected))  # Output: 2
 
+
+"""
+200. Number of Islands
+
+Given an m x n 2D binary grid which represents a map of 1 (land) and 0 (water), return the number of islands. 
+An island is surrounded by water and is formed by connecting adjacent land cells horizontally or vertically.
+
+As mentioned earlier, a graph can be given in the form of a matrix where squares are nodes and their neighbors are the 
+adjacent squares. In this problem, it says that land is connected horizontally (left/right) or vertically (up/down). 
+We can think of each land square as a node, and the up/down/left/right relationship forming edges. 
+The problem is asking us for the number of islands, aka the number of connected components.
+
+It seems this problem is very similar to the previous one. In fact, it is the exact same problem 
+(find the number of connected components in an undirected graph), the format of the graph is just different. 
+Let's use the same algorithm, but implemented according to this new format.
+"""
+
+def numIslands(grid):
+    if not grid:
+        return 0
+
+    rows, cols = len(grid), len(grid[0])
+    seen = set()  # To track visited land cells
+    island_count = 0
+
+    def dfs(r, c):
+        if (r, c) in seen or r < 0 or c < 0 or r >= rows or c >= cols or grid[r][c] == '0':
+            return
+        seen.add((r, c))  # Mark cell as visited
+
+        # Explore all four directions
+        dfs(r + 1, c)  # Down
+        dfs(r - 1, c)  # Up
+        dfs(r, c + 1)  # Right
+        dfs(r, c - 1)  # Left
+
+    # Scan the grid
+    for r in range(rows):
+        for c in range(cols):
+            if grid[r][c] == '1' and (r, c) not in seen:  # Found an unvisited island
+                island_count += 1
+                dfs(r, c)  # Explore the entire island
+
+    return island_count
