@@ -7,7 +7,9 @@ __email__ = "er.sarthak@outlook.com"
 __status__ = "Production"
 
 """Features
-Aggregates and applications — base classes for event-sourced aggregates and applications. Suggests how to structure an event-sourced application. All classes are fully type-hinted to guide developers in using the library.
+Aggregates and applications — base classes for event-sourced aggregates and applications. 
+Suggests how to structure an event-sourced application. 
+All classes are fully type-hinted to guide developers in using the library.
 
 Worked examples — includes examples showing how to develop aggregates, applications and systems.
 
