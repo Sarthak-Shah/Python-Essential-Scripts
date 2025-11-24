@@ -1,0 +1,54 @@
+# ---- Python cache ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ---- Virtual environments ----
+venv_for_essential/
+env/
+.venv_for_essential/
+
+# ---- IDEs ----
+.idea/
+.vscode/
+*.code-workspace
+
+# ---- OS files ----
+.DS_Store
+Thumbs.db
+
+# ---- Logs ----
+*.log
+
+# ---- Byte-compiled / generated ----
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+
+# ---- Settings ----
+*.swp
+*.swo
+
+# ---- MyPy / Pylint ----
+.mypy_cache/
+.pytest_cache/
+.pyre/
+
+# ---- FastAPI / Flask ----
+*.db
+instance/
+
+# ---- Coverage ----
+htmlcov/
+.coverage
+.pytest_cache/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- Local config ----
+.env
+*.env
